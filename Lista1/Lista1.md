@@ -26,6 +26,7 @@ Calcule o montante (M) final usando a fórmula de Juros Simples:
 $$
 M=C×(1+(i×t))
 $$
+
 Onde:
 
 - C é o capital
