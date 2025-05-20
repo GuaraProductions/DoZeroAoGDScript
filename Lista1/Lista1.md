@@ -1,6 +1,6 @@
 #### **1️⃣ Questão 1 - Conversor de Temperatura**
 
-Escreva um script que peça ao usuário uma temperatura em Celsius e converta para Fahrenheit.  
+Escreva uma função que converta uma temperatura em Celsius para Fahrenheit.  
 A fórmula de conversão é:
 
 $$
@@ -12,7 +12,7 @@ $$
 
 #### **2️⃣ Questão 2 - Calculadora de Juros Simples**
 
-Escreva um script que receba três informações do usuário:
+Escreva uma função que receba três informações do usuário:
 
 - Capital inicial (em dinheiro)
 	
