@@ -8,9 +8,9 @@
 
 **Tarefa:** Use um laço `for` para somar os números de 1 até N (inclusive) e mostrar o total.
 
-> **Dica 1:** Use `for i in range(1, N + 1):` para percorrer de 1 até N.
->
-> **Dica 2:** Crie uma variável acumuladora (`var soma = 0`) e vá somando os valores dentro do loop.
+<details> <summary>Dica 1</b></font></summary> Use `for i in range(1, N + 1):` para percorrer de 1 até N. </details>
+<details> <summary>Dica 2</b></font></summary> Crie uma variável acumuladora (`var soma = 0`) e vá somando os valores dentro do loop. </details>
+<details> <summary>Dica 3</b></font></summary> Vá somando de "i" com "soma" dentro do loop. </details>
 
 ---
 
