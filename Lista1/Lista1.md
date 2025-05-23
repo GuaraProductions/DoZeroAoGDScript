@@ -1,6 +1,6 @@
 #### **1️⃣ Questão 1 - Conversor de Temperatura**
 
-Escreva uma função que converta uma temperatura em Celsius para Fahrenheit.  
+Complete uma função que converta uma temperatura em Celsius para Fahrenheit.  
 A fórmula de conversão é:
 
 $$
@@ -45,7 +45,7 @@ Onde:
 ####  3️⃣ **Questão 3 - Calculadora de Média e Situação Escolar**
 
 Escreva um script que receba as 3 notas de um aluno e calcule a média final.  
-Com a média em mãos, exiba:
+Com a média em mãos, retorne da função:
 
 - `"Aprovado"` se a média for maior ou igual a 7;
 	
@@ -63,21 +63,13 @@ Com a média em mãos, exiba:
 
 #### **4️⃣ Questão 4 - Calculadora de Desconto em Compras**
 
-Escreva um script que receba:
-
-- O valor total de uma compra;
-	
-- A porcentagem de desconto aplicada.
-	
-
 Calcule e exiba:
 
 - O valor do desconto;
 	
 - O valor final da compra após aplicar o desconto.
 	
-
-Se o valor final for superior a R$ 500,00, exiba uma mensagem: `"Parabéns, você ganhou um brinde!"`.
+- Se o valor final for superior a R$ 500,00, pois então o cliente irá ganhar um brinde.
 
 
 <details> <summary>Dica 1</b></font></summary>Para calcular o desconto, multiplique o valor pelo percentual e divida por 100.</details>
@@ -92,12 +84,11 @@ Se o valor final for superior a R$ 500,00, exiba uma mensagem: `"Parabéns, voc�
 
 #### **5️⃣Questão 5 - Verificação de Ano Bissexto**
 
-Escreva um script que receba um ano do usuário e verifique se ele é bissexto ou não.  
+Complete uma função que receba um ano do usuário e verifique se ele é bissexto ou não.  
 Para um ano ser bissexto, ele deve:
 
 - Ser divisível por 4;
 	
 - Não ser divisível por 100, exceto se também for divisível por 400.
 	
-
 <details> <summary>Dica 1</b></font></summary>Use o operador `%` para verificar se um número é divisível por outro.</details>

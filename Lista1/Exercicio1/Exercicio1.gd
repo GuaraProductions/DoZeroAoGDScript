@@ -21,7 +21,7 @@ func _on_converter_pressed() -> void:
 	var farenheit := celsius_para_farenheit(numero)
 	
 	resultado.modulate = Color.WHITE
-	resultado.text = "Resultado: %2f" % [farenheit]
+	resultado.text = "Resultado: %s" % [str(farenheit).pad_decimals(2)]
 
 #endregion
 
