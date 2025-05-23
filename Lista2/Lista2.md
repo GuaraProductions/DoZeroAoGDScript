@@ -20,9 +20,10 @@
 
 **Tarefa:** Use um laço `for` para construir e exibir a tabuada de N até 10.
 
-> **Dica 1:** Use `for i in range(1, 11):` para gerar de 1 a 10.
->
-> **Dica 2:** Em cada iteração, calcule `i * N` e concatene a string com `"{} x {} = {}\n".format(i, N, i * N)`.
+Obs.: A função em si não retorna nada (já que é do tipo void), você precisa usar a função `mostrar_tabuada` para mostrar o resultado
+
+<details> <summary>Dica 1</b></font></summary> Use `for i in range(1, 11):` para gerar de 1 a 10 </details>
+<details> <summary>Dica 2</b></font></summary> Em cada iteração, calcule `i * N` </details>
 
 ---
 
@@ -32,9 +33,9 @@
 
 **Tarefa:** Conte quantos números entre 1 e N são múltiplos de 3 e exiba o total.
 
-> **Dica 1:** Use `for i in range(1, N + 1):` e verifique `if i % 3 == 0`.
->
-> **Dica 2:** Use uma variável `contador += 1` sempre que encontrar um múltiplo.
+<details> <summary>Dica 1</b></font></summary> Use `for i in range(1, N + 1):` </details>
+<details> <summary>Dica 2</b></font></summary> Verifique `if i % 3 == 0` </details>
+<details> <summary>Dica 3</b></font></summary> Use uma variável e uma estrutura condicional sempre que encontrar um múltiplo </details>
 
 ---
 
@@ -44,10 +45,8 @@
 
 **Tarefa:** Calcule o fatorial de `N` usando um laço `while` ou `for`.
 
-> **Dica 1:** O fatorial é o produto de todos os inteiros positivos até N: `N * (N-1) * ... * 1`.
->
-> **Dica 2:** Use `for i in range(1, N + 1): resultado *= i`.
-
+<details> <summary>Dica 1</b></font></summary> O fatorial é o produto de todos os inteiros positivos até N: `N * (N-1) * ... * 1` </details>
+<details> <summary>Dica 2</b></font></summary> Use `for i in range(1, N + 1): resultado *= i` </details>
 ---
 
 #### **5️⃣ Soma dos Pares entre 1 e N**
@@ -56,8 +55,7 @@
 
 **Tarefa:** Some apenas os números pares entre 1 e N e exiba o total.
 
-> **Dica 1:** Dentro do loop, use `if i % 2 == 0` para verificar se o número é par.
->
-> **Dica 2:** Some os valores pares em uma variável `soma` inicializada com 0.
+<details> <summary>Dica 1</b></font></summary> Dentro do loop, use `if i % 2 == 0` para verificar se o número é par </details>
+<details> <summary>Dica 2</b></font></summary> Some os valores pares em uma variável `soma` inicializada com 0 </details>
 
 ---
