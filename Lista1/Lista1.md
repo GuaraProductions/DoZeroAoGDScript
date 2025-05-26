@@ -49,7 +49,7 @@ Com a média em mãos, retorne da função:
 
 - `"Aprovado"` se a média for maior ou igual a 60;
 	
-- `"Recuperação"` se a média estiver entre 40 e 59 (exclusivo);
+- `"Recuperação"` se a média estiver entre 40 e 59;
 	
 - `"Reprovado"` se a média for menor que 40.
 
