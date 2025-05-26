@@ -20,25 +20,22 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 script = ExtResource("1_5ovto")
 
-[node name="Center" type="CenterContainer" parent="."]
-layout_mode = 2
-
-[node name="VBox" type="VBoxContainer" parent="Center"]
+[node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Titulo" type="Label" parent="Center/VBox"]
+[node name="Titulo" type="Label" parent="VBox"]
 layout_mode = 2
 text = "Calculadora:
 Tabuada de um Número"
 label_settings = SubResource("LabelSettings_07jpv")
 horizontal_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="Center/VBox"]
+[node name="HBox" type="HBoxContainer" parent="VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Entrada" type="LineEdit" parent="Center/VBox/HBox"]
+[node name="Entrada" type="LineEdit" parent="VBox/HBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -46,15 +43,74 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 placeholder_text = "Insira um número"
 
-[node name="Calcular" type="Button" parent="Center/VBox/HBox"]
+[node name="Calcular" type="Button" parent="VBox/HBox"]
 layout_mode = 2
 text = "Calcular"
 
-[node name="Resultado" type="Label" parent="Center/VBox"]
+[node name="ErroTexto" type="Label" parent="VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_e0lnp")
 vertical_alignment = 1
 
-[connection signal="pressed" from="Center/VBox/HBox/Calcular" to="." method="calcular"]
+[node name="Panel" type="PanelContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/Panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabuadaGrid" type="VBoxContainer" parent="VBox/Panel/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="AdicaoLabel" type="Label" parent="VBox/Panel/Scroll/TabuadaGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Adição"
+
+[node name="AdicaoFlowContainer" type="HFlowContainer" parent="VBox/Panel/Scroll/TabuadaGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="SubtracaoLabel" type="Label" parent="VBox/Panel/Scroll/TabuadaGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Subtração"
+
+[node name="SubtracaoFlowContainer" type="HFlowContainer" parent="VBox/Panel/Scroll/TabuadaGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="MultiplicacaoLabel" type="Label" parent="VBox/Panel/Scroll/TabuadaGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Multiplicação"
+
+[node name="MultiplicacaoFlowContainer" type="HFlowContainer" parent="VBox/Panel/Scroll/TabuadaGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="DivisaoLabel" type="Label" parent="VBox/Panel/Scroll/TabuadaGrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Divisao"
+
+[node name="DivisaoFlowContainer" type="HFlowContainer" parent="VBox/Panel/Scroll/TabuadaGrid"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[connection signal="pressed" from="VBox/HBox/Calcular" to="." method="calcular"]
