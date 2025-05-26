@@ -12,7 +12,7 @@ $$
 
 #### **2️⃣ Questão 2 - Calculadora de Juros Simples**
 
-Escreva uma função que receba três informações do usuário:
+Complete uma função que receba três informações do usuário:
 
 - Capital inicial (em dinheiro)
 	
@@ -44,14 +44,14 @@ Onde:
 ---
 ####  3️⃣ **Questão 3 - Calculadora de Média e Situação Escolar**
 
-Escreva um script que receba as 3 notas de um aluno e calcule a média final.  
+Complete uma função que receba as 3 notas de um aluno e calcule a média final.  
 Com a média em mãos, retorne da função:
 
-- `"Aprovado"` se a média for maior ou igual a 7;
+- `"Aprovado"` se a média for maior ou igual a 60;
 	
-- `"Recuperação"` se a média estiver entre 5 e 7 (exclusivo);
+- `"Recuperação"` se a média estiver entre 40 e 59 (exclusivo);
 	
-- `"Reprovado"` se a média for menor que 5.
+- `"Reprovado"` se a média for menor que 40.
 
 
 <details> <summary>Dica 1</b></font></summary>Para calcular a média, some todas as notas e divida pelo número de notas. </details>

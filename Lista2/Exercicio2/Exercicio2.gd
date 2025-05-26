@@ -76,5 +76,8 @@ func gerar_tabuada(n: int) -> String:
 	- -> Subtracao
 	* -> Multiplicação
 	/ -> Divisão
+	
+	Use a função "adicionar_tabuada" para colocar o resultado
+	de uma tabuada na tela
 	"""
 	return ""
