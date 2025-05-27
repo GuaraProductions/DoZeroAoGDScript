@@ -71,7 +71,6 @@ func adicionar_tabuada(numero1: int,
 			
 	# Para divisão, agrupamos pelo divisor (numero2); para as demais, pelo numero1
 	var group_key = numero2 if operacao == "/" else numero1
-	print("group_key: ", group_key)
 	var vbox_name = str(group_key)
 	var vbox: VBoxContainer
 
