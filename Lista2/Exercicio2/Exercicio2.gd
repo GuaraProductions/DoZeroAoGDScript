@@ -46,6 +46,7 @@ func calcular():
 		return
 	
 	tabuada_panel.visible = true
+	erro.visible = false
 	gerar_tabuada(n)
 	
 func _remover_nodes(node: Control) -> void:
