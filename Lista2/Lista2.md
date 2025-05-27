@@ -53,6 +53,8 @@ Obs.: A função em si não retorna nada (já que é do tipo void), você precis
 
 - Complete uma função que calcula o fatorial de `N`
 
+### Exemplo
+
 - Entrada: 3 → Saída esperada: Fatorial: 6
 - Entrada: 5 → Saída esperada: Fatorial: 120
 - Entrada: 0 → Saída esperada: Fatorial: 1
@@ -64,6 +66,8 @@ Obs.: A função em si não retorna nada (já que é do tipo void), você precis
 #### **5️⃣ Soma dos Pares entre 1 e N**
 
 - Complete uma função que calcula a soma dos números pares entre 1 e N (incluso).
+
+### Exemplo
 
 - Entrada: 6 → Saída esperada: Soma dos pares: 12
 - Entrada: 5 → Saída esperada: Soma dos pares: 6
