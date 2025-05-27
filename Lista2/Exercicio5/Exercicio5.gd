@@ -2,8 +2,8 @@ extends Node
 
 #region JahImplementado
 
-@onready var entrada = $CampoNumero
-@onready var resultado = $LabelResultado
+@onready var entrada = %Entrada
+@onready var resultado = %Resultado
 
 func _eh_numero_valido(texto: String) -> bool:
 	return texto.is_valid_int()
