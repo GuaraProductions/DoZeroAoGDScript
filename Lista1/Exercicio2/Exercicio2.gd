@@ -31,7 +31,7 @@ func _on_calcular_pressed() -> void:
 	var montante := calcular_montante(capital, taxa_juros, tempo)
 	
 	resultado.modulate = Color.WHITE
-	resultado.text = "Resultado: R$%2f" % [str(montante).pad_decimals(2)]
+	resultado.text = "Resultado: R$%s" % [str(montante).pad_decimals(2)]
 
 #endregion
 

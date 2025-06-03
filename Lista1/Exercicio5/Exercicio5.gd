@@ -19,8 +19,7 @@ func _on_converter_pressed() -> void:
 	var ano : int = int(ano_texto)
 		
 	var eh_bissexto := ano_eh_bissexto(ano)
-	eh_bissexto = false
-	
+
 	resultado.modulate = Color.WHITE
 	
 	resultado.text = "O ano de %d " % [ano]
