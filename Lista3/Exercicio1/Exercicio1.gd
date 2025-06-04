@@ -2,8 +2,8 @@ extends MarginContainer
 
 #region JahImplementado
 
-@onready var entrada_base = %EntradaBase
-@onready var entrada_altura = %EntradaAltura
+@onready var entrada_base = %BaseEntrada
+@onready var entrada_altura = %AlturaEntrada
 @onready var resultado = %Resultado
 
 func _eh_valido(texto: String) -> bool:
@@ -24,7 +24,7 @@ func calcular():
 	var r : Retangulo = criar_retangulo(b,h)
 
 	resultado.modulate = Color.WHITE
-	resultado.text = "Área: %.2f\nPerímetro: %.2f" % [r.calcular_area(), r.calcular_perimetro()]
+	resultado.text = str(r)
 
 #endregion
 
@@ -55,3 +55,8 @@ class Retangulo:
 	func calcular_perimetro() -> float:
 		# TODO
 		return 0.0
+		
+	func _to_string() -> String:
+		# TODO
+		return "[Triangulo]:\nAltura = %f\nBase = %f\nÁrea = %s\nPerímetro = %f" % \
+		[_altura, _base, str(calcular_area()).pad_decimals(2), calcular_perimetro()]

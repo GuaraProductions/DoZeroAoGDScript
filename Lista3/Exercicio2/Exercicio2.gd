@@ -1,28 +1,32 @@
-extends Node
+extends MarginContainer
 
-#region JahImplementado
+@onready var resultado: Label = $Resultado
 
-@onready var entrada = %Entrada
-@onready var resultado = %Resultado
+func _on_cachorro_pressed() -> void:
+	var animal: Animal = Cachorro.new()
+	resultado.text = animal.falar()
 
-func _eh_numero_valido(texto: String) -> bool:
-	return texto.is_valid_int()
+func _on_gato_pressed() -> void:
+	pass #TODO
+	#var animal: Animal = Gato.new()
+	#resultado.text = animal.falar()
 
-func calcular():
-	var texto = entrada.text
-	
-	if not _eh_numero_valido(texto):
-		resultado.text = "Erro! A entrada de texto é inválida!\nColoque um número inteiro!"
-		resultado.modulate = Color.RED
-		return
-	
-	var n = int(texto)
-	var soma = somar_ate_n(n)
-	resultado.modulate = Color.WHITE
-	resultado.text = "Soma: %d" % soma
+func _on_ovelha_pressed() -> void:
+	pass #TODO
+	#var animal: Animal = Cavalo.new()
+	#resultado.text = animal.falar()
 
-#endregion
+# --- Definições das classes ---
 
-func somar_ate_n(n: int) -> int:
-	# TODO: Implemente a soma de 1 até n usando repetição
-	return 0
+class Animal:
+	# Método base (pode ser virtual/abstrato)
+	func falar() -> String:
+		printerr("Uso errado da classe!")
+		return "…"
+
+class Cachorro extends Animal:
+	func falar() -> String:
+		# TODO: 
+		return ""
+
+#TODO: Fazer as outras classes

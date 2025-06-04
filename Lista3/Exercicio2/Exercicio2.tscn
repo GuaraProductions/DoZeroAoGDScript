@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jo5usjko41tt"]
+[gd_scene load_steps=5 format=3 uid="uid://jo5usjko41tt"]
 
 [ext_resource type="Script" uid="uid://bc1n8l6fdvsl1" path="res://Lista3/Exercicio2/Exercicio2.gd" id="1_n5r4c"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_07jpv"]
-font_size = 38
-
-[sub_resource type="LabelSettings" id="LabelSettings_e0lnp"]
-font_size = 18
+[ext_resource type="Texture2D" uid="uid://kr5vowfbbxug" path="res://assets/Lista3/Exercicio3/cachorro.png" id="2_vaxds"]
+[ext_resource type="Texture2D" uid="uid://dbosdqrpt0ih0" path="res://assets/Lista3/Exercicio3/cat.png" id="3_k17cx"]
+[ext_resource type="Texture2D" uid="uid://dsx2vghrr44ic" path="res://assets/Lista3/Exercicio3/ovelha.png" id="4_k17cx"]
 
 [node name="Exercicio2" type="MarginContainer"]
 anchors_preset = 15
@@ -23,39 +20,66 @@ script = ExtResource("1_n5r4c")
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="Center"]
+[node name="GridContainer" type="GridContainer" parent="Center"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/h_separation = 105
+theme_override_constants/v_separation = 15
+columns = 3
 
-[node name="Titulo" type="Label" parent="Center/VBox"]
+[node name="CachorroLabel" type="Label" parent="Center/GridContainer"]
 layout_mode = 2
-text = "Calculadora:
-Some todos os números até N"
-label_settings = SubResource("LabelSettings_07jpv")
+theme_override_font_sizes/font_size = 36
+text = "Cachorro"
 horizontal_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="Center/VBox"]
+[node name="GatoLabel" type="Label" parent="Center/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Gato"
+horizontal_alignment = 1
 
-[node name="Entrada" type="LineEdit" parent="Center/VBox/HBox"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
+[node name="CavaloPressed" type="Label" parent="Center/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
-placeholder_text = "Insira o \"N\" aqui"
+theme_override_font_sizes/font_size = 36
+text = "Ovelha"
+horizontal_alignment = 1
 
-[node name="Calcular" type="Button" parent="Center/VBox/HBox"]
-unique_name_in_owner = true
+[node name="CachorroIcon" type="TextureRect" parent="Center/GridContainer"]
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
-text = "Calcular"
+texture = ExtResource("2_vaxds")
+expand_mode = 4
 
-[node name="Resultado" type="Label" parent="Center/VBox"]
-unique_name_in_owner = true
+[node name="GatoIcon" type="TextureRect" parent="Center/GridContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-label_settings = SubResource("LabelSettings_e0lnp")
-vertical_alignment = 1
+texture = ExtResource("3_k17cx")
+expand_mode = 4
 
-[connection signal="pressed" from="Center/VBox/HBox/Calcular" to="." method="calcular"]
+[node name="OvelhaIcon" type="TextureRect" parent="Center/GridContainer"]
+custom_minimum_size = Vector2(155, 0)
+layout_mode = 2
+texture = ExtResource("4_k17cx")
+expand_mode = 4
+
+[node name="CachorroButton" type="Button" parent="Center/GridContainer"]
+layout_mode = 2
+text = "Falar"
+
+[node name="GatoButton" type="Button" parent="Center/GridContainer"]
+layout_mode = 2
+text = "Falar"
+
+[node name="OvelhaButton" type="Button" parent="Center/GridContainer"]
+layout_mode = 2
+text = "Falar"
+
+[node name="Resultado" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 68
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Center/GridContainer/CachorroButton" to="." method="_on_cachorro_pressed"]
+[connection signal="pressed" from="Center/GridContainer/GatoButton" to="." method="_on_gato_pressed"]
+[connection signal="pressed" from="Center/GridContainer/OvelhaButton" to="." method="_on_ovelha_pressed"]

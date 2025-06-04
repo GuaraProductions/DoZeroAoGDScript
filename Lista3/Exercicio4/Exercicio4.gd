@@ -5,9 +5,10 @@ extends MarginContainer
 @onready var entrada = %Entrada
 @onready var resultado = %Resultado
 
-@onready var entrada = %EntradaValor
-@onready var resultado = %Resultado
-var cofre = Cofrinho.new()
+var cofre : Cofrinho
+
+func _ready() -> void:
+	cofre = Cofrinho.new()
 
 func _eh_valido(texto: String) -> bool:
 	return texto.is_valid_float()
@@ -30,7 +31,7 @@ func sacar():
 	var ok = cofre.sacar(float(texto))
 	resultado.text = ok if ok else "Saldo insuficiente."
 
-class Cofrinho
+class Cofrinho:
 	var _saldo: float = 0.0
 
 	func adicionar(valor: float):

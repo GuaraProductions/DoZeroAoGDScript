@@ -1,28 +1,36 @@
+# 3️⃣ Exercício “Carro com Composição de Motor”
 extends MarginContainer
 
-#region JahImplementado
+@onready var entrada_potencia = %PotenciaEntrada
+@onready var btn_ligar = %BtnLigarCarro
+@onready var resultado = %ResultadoLabel
+@onready var resultado2 = %ResultadoLabel2
 
-@onready var entrada = %Entrada
-@onready var resultado = %Resultado
-
-func _eh_numero_valido(texto: String) -> bool:
-	return texto.is_valid_int()
-
-func calcular():
-	var texto = entrada.text
-	
-	if not _eh_numero_valido(texto):
-		resultado.text = "Erro! A entrada de texto é inválida!\nColoque um número inteiro!"
+func _on_ligar_pressed() -> void:
+	var texto = entrada_potencia.text
+	if not texto.is_valid_integer():
+		resultado.text = "Erro! Potência inválida."
 		resultado.modulate = Color.RED
 		return
+
+	var p = int(texto)
 	
-	var n = int(texto)
-	var soma = somar_ate_n(n)
+	#var carro: Carro = Carro.new(p)
+	#var msg_ligar_carro = carro.ligar_carro()
+	#var potencia = carro.acessar_potencia()
+	
 	resultado.modulate = Color.WHITE
-	resultado.text = "Soma: %d" % soma
+	#resultado.text = msg_ligar_carro
 
-#endregion
+	#resultado2.text = potencia
+	resultado2.modulate = Color.WHITE
+# --- Definições das classes ---
 
-func somar_ate_n(n: int) -> int:
-	# TODO: Implemente a soma de 1 até n usando repetição
-	return 0
+class Motor:
+	var potencia: int
+	#TODO: Complete o resto da classe
+	
+
+class Carro:
+	var motor: Motor
+	#TODO: Complete o resto da classe

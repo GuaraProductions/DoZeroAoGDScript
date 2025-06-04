@@ -34,10 +34,10 @@ Utilize métodos `set_base()` e `set_altura()` para alterar os valores e `get_ba
 
 * Cachorro.falar() → "Au au!"
 * Gato.falar() → "Miau!"
-* Cavalo.falar() → "Relincha!"
+* Ovelha.falar() → "Beehhh!"
 
 **Tarefa:**
-Crie uma classe base `Animal` com o método `falar()`. Em seguida, crie subclasses `Cachorro`, `Gato`, e `Cavalo`, sobrescrevendo o método `falar()` com a fala apropriada.
+Crie uma classe base `Animal` com o método `falar()`. Em seguida, crie subclasses `Cachorro`, `Gato`, e `Ovelha`, sobrescrevendo o método `falar()` com a fala apropriada.
 
 O script deve demonstrar o uso da herança com polimorfismo (chamar `animal.falar()` independentemente do tipo).
 
