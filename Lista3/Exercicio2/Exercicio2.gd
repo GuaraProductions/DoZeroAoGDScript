@@ -34,7 +34,7 @@ func _on_gato_pressed() -> void:
 
 func _on_ovelha_pressed() -> void:
 	pass #TODO
-	#var animal: Animal = Cavalo.new()
+	#var animal: Animal = Ovelha.new()
 	#resultado.text = animal.falar()
 	#tocar_audio(animal.get_efeito_sonoro())
 

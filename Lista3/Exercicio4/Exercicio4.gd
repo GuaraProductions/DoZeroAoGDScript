@@ -18,39 +18,39 @@ func _eh_valido(texto: String) -> bool:
 	return texto.is_valid_float()
 
 func adicionar():
-	var texto = adicionar_saldo_field.text
+	var texto = adicionar_saldo_field.text.strip_edges()
 	if not _eh_valido(texto):
 		resultado.text = "Erro: Valor inválido."
 		resultado.modulate = Color.RED
 		return
 	cofre.adicionar(float(texto))
+	atualizar_informacoes_da_conta()
 	resultado.text = \
 	 "Dinheiro adicionado com sucesso!:\nSaldo atualizado: %s" % \
-	 [str(cofre.get_saldo()).pad_decimals(2)]
+	 [Numeros.formatar(cofre.saldo)]
 
 func sacar():
-	var texto = sacar_dinheiro_field.text
+	var texto = sacar_dinheiro_field.text.strip_edges()
 	if not _eh_valido(texto):
 		resultado.text = "Erro: Valor inválido."
 		resultado.modulate = Color.RED
 		return
 	var ok = cofre.sacar(float(texto))
+	atualizar_informacoes_da_conta()
 	resultado.text = ok if ok else \
 	 "Dinheiro sacado com sucesso!\nSaldo atualizado: %s" % [str(cofre.get_saldo()).pad_decimals(2)]
 
+#endregion
+
 func mudar_nome() -> void:
-	var texto = mudar_nome_field.text
-	if not _eh_valido(texto):
-		resultado.text = "Erro: Valor inválido."
-		resultado.modulate = Color.RED
-		return
-	cofre.nome = texto
-	resultado.text = "Nome atualizado! Novo nome: %s"
+	var texto = mudar_nome_field.text.strip_edges()
+
+	#TODO: Inserir lógica para alterar nome
+	atualizar_informacoes_da_conta()
+	resultado.text = "Nome atualizado! Novo nome: %s" % [texto]
 
 func atualizar_informacoes_da_conta() -> void:
 	informacoes.text = str(cofre)
-
-#endregion
 
 class Cofrinho:
 	
@@ -63,7 +63,7 @@ class Cofrinho:
 		self.nome = nome
 		self.saldo = saldo
 		
-	func adicionar(valor: float):
+	func adicionar(valor: float) -> void:
 		# TODO
 		pass
 

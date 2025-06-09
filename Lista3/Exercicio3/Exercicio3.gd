@@ -1,15 +1,21 @@
-# 3️⃣ Exercício “Carro com Composição de Motor”
 extends MarginContainer
+
+#region JahImplementado
 
 @onready var entrada_potencia = %Entrada
 @onready var btn_ligar = %Calcular
 @onready var msg_licar_carro = %MsgLigarCarro
 @onready var potencia_carro = %PotenciaDoCarro
 
+func _eh_valido(texto: String) -> bool:
+	return texto.is_valid_float() or texto.is_valid_int()
+
+#endregion
+
 func _on_ligar_pressed() -> void:
-	var texto = entrada_potencia.text
-	if not texto.is_valid_integer():
-		msg_licar_carro.text = "Erro! Potência inválida."
+	var texto = entrada_potencia.text.strip_edges()
+	if not _eh_valido(texto):
+		msg_licar_carro.text = "Erro! Potência inválida! Coloque um número!"
 		msg_licar_carro.modulate = Color.RED
 		return
 

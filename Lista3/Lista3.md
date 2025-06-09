@@ -4,7 +4,7 @@
 Esta lista de exercícios introduz os pilares da Programação Orientada a Objetos (POO) utilizando GDScript. 
 Cada questão trabalha um ou mais pilares: **Abstração**, **Encapsulamento**, **Herança**, **Composição** e **Polimorfismo**.
 
-Cada cena conterá objetos prontos para interação (exceto a questão 5) e o aluno deverá completar ou criar as classes conforme solicitado.
+Cada cena conterá classes parcialmente construídas (exceto a questão 5) e o aluno deverá completar ou criar novas classes conforme solicitado.
 
 ---
 
@@ -82,7 +82,7 @@ Complete a classe `Cofrinho` com atributo privado `_saldo`.
 Implemente os seguintes métodos:
 
 * Método `adicionar(valor)` soma ao saldo.
-* Método `sacar(valor)` só subtrai se houver saldo suficiente.
+* Método `sacar(valor)` só subtrai se houver saldo suficiente. Retorne "true" se a operação for um sucesso e "false" caso o usuário não tenha saldo o suficiente para sacar
 * Método `set_saldo()` configura um novo saldo . (`saldo` setter)
 * Método `get_saldo()` retorna o saldo atual. (`saldo` getter)
 * Método `set_nome(nome)` configura um novo nome. (`nome` setter)

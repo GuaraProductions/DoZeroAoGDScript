@@ -30,7 +30,7 @@ func _on_circulo_pressed() -> void:
 	#area = forma.area()
 	
 	circulo_resultado.modulate = Color.WHITE
-	circulo_resultado.text = "Área do Círculo: %s" % str(area).pad_decimals(2)
+	circulo_resultado.text = "Área do Círculo: %s" % Numeros.formatar(area)
 
 func _on_quadrado_pressed() -> void:
 	var texto = quadrado_line_edit.text
@@ -46,7 +46,7 @@ func _on_quadrado_pressed() -> void:
 	#var area = forma.area()
 	
 	quadrado_resultado.modulate = Color.WHITE
-	quadrado_resultado.text = "Área do Quadrado: %s" % str(area).pad_decimals(2)
+	quadrado_resultado.text = "Área do Quadrado: %s" % Numeros.formatar(area)
 
 func _on_triangulo_pressed() -> void:
 	var texto_b = triangulo_base_line_edit.text
@@ -64,4 +64,4 @@ func _on_triangulo_pressed() -> void:
 	#var area = forma.area()
 	
 	triangulo_resultado.modulate = Color.WHITE
-	triangulo_resultado.text = "Área do Triângulo: %s" % str(area).pad_decimals(2)
+	triangulo_resultado.text = "Área do Triângulo: %s" % Numeros.formatar(area)

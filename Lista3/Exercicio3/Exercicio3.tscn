@@ -65,4 +65,4 @@ size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_e0lnp")
 vertical_alignment = 1
 
-[connection signal="pressed" from="Center/VBox/HBox/Calcular" to="." method="calcular"]
+[connection signal="pressed" from="Center/VBox/HBox/Calcular" to="." method="_on_ligar_pressed"]
