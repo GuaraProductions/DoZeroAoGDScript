@@ -3,14 +3,14 @@ extends MarginContainer
 
 @onready var entrada_potencia = %Entrada
 @onready var btn_ligar = %Calcular
-@onready var resultado = %MsgLigarCarro
-@onready var resultado2 = %PotenciaDoCarro
+@onready var msg_licar_carro = %MsgLigarCarro
+@onready var potencia_carro = %PotenciaDoCarro
 
 func _on_ligar_pressed() -> void:
 	var texto = entrada_potencia.text
 	if not texto.is_valid_integer():
-		resultado.text = "Erro! Potência inválida."
-		resultado.modulate = Color.RED
+		msg_licar_carro.text = "Erro! Potência inválida."
+		msg_licar_carro.modulate = Color.RED
 		return
 
 	var p = int(texto)
@@ -20,11 +20,11 @@ func _on_ligar_pressed() -> void:
 	#var msg_ligar_carro = carro.ligar_carro()
 	#var potencia = carro.acessar_potencia()
 	
-	resultado.modulate = Color.WHITE
-	#resultado.text = msg_ligar_carro
+	msg_licar_carro.modulate = Color.WHITE
+	#msg_licar_carro.text = msg_ligar_carro
 
-	#resultado2.text += potencia
-	resultado2.modulate = Color.WHITE
+	#potencia_carro.text = potencia
+	potencia_carro.modulate = Color.WHITE
 # --- Definições das classes ---
 
 class Motor:
