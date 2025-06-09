@@ -1,7 +1,8 @@
 ### 📘 **Lista 3 - Programação Orientada a Objetos com GDScript**
 
 **Objetivo:**
-Esta lista de exercícios introduz os pilares da Programação Orientada a Objetos (POO) utilizando GDScript. Cada questão trabalha um ou mais pilares: **Abstração**, **Encapsulamento**, **Herança**, **Composição** e **Polimorfismo**.
+Esta lista de exercícios introduz os pilares da Programação Orientada a Objetos (POO) utilizando GDScript. 
+Cada questão trabalha um ou mais pilares: **Abstração**, **Encapsulamento**, **Herança**, **Composição** e **Polimorfismo**.
 
 Cada cena conterá objetos prontos para interação (exceto a questão 5) e o aluno deverá completar ou criar as classes conforme solicitado.
 
@@ -35,7 +36,8 @@ sejam exibidas na tela
 * Ovelha.falar() → "Beehhh!"
 
 **Tarefa:**
-Crie uma classe base `Animal` com o método `falar()`. Em seguida, crie subclasses `Cachorro`, `Gato`, e `Ovelha`, sobrescrevendo o método `falar()` com a fala apropriada.
+Crie uma classe base `Animal` com o método `falar()`. Em seguida, crie subclasses `Cachorro`, `Gato`, e `Ovelha`, 
+sobrescrevendo o método `falar()` com a fala apropriada.
 
 O script deve demonstrar o uso da herança com polimorfismo (chamar `animal.falar()` independentemente do tipo).
 

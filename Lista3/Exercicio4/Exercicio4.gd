@@ -5,7 +5,6 @@ extends MarginContainer
 @onready var adicionar_saldo_field: LineEdit = %AdicionarSaldoField
 @onready var sacar_dinheiro_field: LineEdit = %SacarDinheiroField
 @onready var mudar_nome_field: LineEdit = %MudarNomeField
-@onready var saldo_field: Label = %SaldoField
 @onready var resultado: Label = %Resultado
 @onready var informacoes: Label = %Informacoes
 
@@ -13,6 +12,7 @@ var cofre : Cofrinho
 
 func _ready() -> void:
 	cofre = Cofrinho.new()
+	atualizar_informacoes_da_conta()
 
 func _eh_valido(texto: String) -> bool:
 	return texto.is_valid_float()
@@ -44,12 +44,13 @@ func mudar_nome() -> void:
 		resultado.text = "Erro: Valor inválido."
 		resultado.modulate = Color.RED
 		return
-	var ok = cofre.sacar(float(texto))
-	resultado.text = ok if ok else \
-	 "Nome atualizado! Novo nome: %s"
+	cofre.nome = texto
+	resultado.text = "Nome atualizado! Novo nome: %s"
 
 func atualizar_informacoes_da_conta() -> void:
 	informacoes.text = str(cofre)
+
+#endregion
 
 class Cofrinho:
 	

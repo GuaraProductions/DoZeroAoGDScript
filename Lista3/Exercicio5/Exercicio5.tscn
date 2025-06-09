@@ -108,3 +108,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
+
+[connection signal="pressed" from="Center/GridContainer/CirculoButton" to="." method="_on_circulo_pressed"]
+[connection signal="pressed" from="Center/GridContainer/QuadradoButton" to="." method="_on_quadrado_pressed"]
+[connection signal="pressed" from="Center/GridContainer/TrianguloButton" to="." method="_on_triangulo_pressed"]

@@ -40,7 +40,6 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
-text = "%s"
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 2
@@ -59,11 +58,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
-columns = 4
-
-[node name="ImprimirSaldoLabel" type="Label" parent="Center/VBox/Operacoes"]
-layout_mode = 2
-text = "Imprimir Saldo"
+columns = 3
 
 [node name="AdicionarSaldoLabel" type="Label" parent="Center/VBox/Operacoes"]
 layout_mode = 2
@@ -77,10 +72,6 @@ text = "Sacar Dinheiro"
 layout_mode = 2
 text = "Mudar Nome"
 
-[node name="ImprimirSaldoButton" type="Button" parent="Center/VBox/Operacoes"]
-layout_mode = 2
-text = "Imprimir"
-
 [node name="AdicionarSaldoField" type="LineEdit" parent="Center/VBox/Operacoes"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -92,11 +83,6 @@ layout_mode = 2
 [node name="MudarNomeField" type="LineEdit" parent="Center/VBox/Operacoes"]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="SaldoField" type="Label" parent="Center/VBox/Operacoes"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Saldo: R$%s"
 
 [node name="AdicionarSaldoButton" type="Button" parent="Center/VBox/Operacoes"]
 layout_mode = 2
