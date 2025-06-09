@@ -1,15 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b00n00xdetbho"]
+[gd_scene load_steps=5 format=3 uid="uid://b00n00xdetbho"]
 
 [ext_resource type="Script" uid="uid://bwyaasbvv0ykh" path="res://Lista3/Exercicio5/Exercicio5.gd" id="1_b4ulq"]
 [ext_resource type="Texture2D" uid="uid://rwyjcs56pgly" path="res://assets/Lista3/Exercicio5/circulo.png" id="2_p7ias"]
 [ext_resource type="Texture2D" uid="uid://nqbydespxaa3" path="res://assets/Lista3/Exercicio5/quadrado.png" id="3_5jatx"]
 [ext_resource type="Texture2D" uid="uid://em00vkj68raf" path="res://assets/Lista3/Exercicio5/triangulo.png" id="4_5vymq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7ias"]
-bg_color = Color(0.262932, 0.262932, 0.262932, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jatx"]
-bg_color = Color(0.230315, 0.230315, 0.230315, 1)
 
 [node name="Exercicio5" type="MarginContainer"]
 anchors_preset = 15
@@ -114,27 +108,3 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
-columns = 2
-
-[node name="PerimetroTotalButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Perimetro total"
-
-[node name="AreaTotalButton" type="Button" parent="GridContainer"]
-layout_mode = 2
-text = "Perimetro total"
-
-[node name="PerimetroTotalLabel" type="Label" parent="GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_p7ias")
-
-[node name="AreaTotalLabel" type="Label" parent="GridContainer"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5jatx")

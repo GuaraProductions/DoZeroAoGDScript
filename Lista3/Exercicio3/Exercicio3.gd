@@ -1,10 +1,10 @@
 # 3️⃣ Exercício “Carro com Composição de Motor”
 extends MarginContainer
 
-@onready var entrada_potencia = %PotenciaEntrada
-@onready var btn_ligar = %BtnLigarCarro
-@onready var resultado = %ResultadoLabel
-@onready var resultado2 = %ResultadoLabel2
+@onready var entrada_potencia = %Entrada
+@onready var btn_ligar = %Calcular
+@onready var resultado = %MsgLigarCarro
+@onready var resultado2 = %PotenciaDoCarro
 
 func _on_ligar_pressed() -> void:
 	var texto = entrada_potencia.text
@@ -15,6 +15,7 @@ func _on_ligar_pressed() -> void:
 
 	var p = int(texto)
 	
+	#TODO
 	#var carro: Carro = Carro.new(p)
 	#var msg_ligar_carro = carro.ligar_carro()
 	#var potencia = carro.acessar_potencia()
@@ -22,7 +23,7 @@ func _on_ligar_pressed() -> void:
 	resultado.modulate = Color.WHITE
 	#resultado.text = msg_ligar_carro
 
-	#resultado2.text = potencia
+	#resultado2.text += potencia
 	resultado2.modulate = Color.WHITE
 # --- Definições das classes ---
 

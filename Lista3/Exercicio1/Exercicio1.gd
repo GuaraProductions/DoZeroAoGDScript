@@ -30,7 +30,7 @@ func calcular():
 
 func criar_retangulo(base: float, altura: float) -> Retangulo:
 	#TODO Criar instancia da classe Retangulo e configurar base e altura
-	return null
+	return Retangulo.new(5,3)
 
 class Retangulo:
 	var _base: float
@@ -57,6 +57,10 @@ class Retangulo:
 		return 0.0
 		
 	func _to_string() -> String:
-		# TODO
-		return "[Triangulo]:\nAltura = %f\nBase = %f\nÁrea = %s\nPerímetro = %f" % \
-		[_altura, _base, str(calcular_area()).pad_decimals(2), calcular_perimetro()]
+		var area : String = Numeros.formatar(calcular_area())
+		var perimetro : String = Numeros.formatar(calcular_perimetro())
+		var altura : String = Numeros.formatar(_altura)
+		var base : String = Numeros.formatar(_base)
+		
+		return "[Triangulo]:\nAltura = %s\nBase = %s\nÁrea = %s\nPerímetro = %s" % \
+		[altura, base, area, perimetro]

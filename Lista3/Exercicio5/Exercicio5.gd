@@ -1,5 +1,6 @@
-# 5️⃣ Exercício “Forma – Polimorfismo e Herança”
 extends MarginContainer
+
+#region JahImplementado
 
 @onready var circulo_line_edit: LineEdit = $Center/GridContainer/CirculoLineEdit
 @onready var quadrado_line_edit: LineEdit = $Center/GridContainer/QuadradoLineEdit
@@ -13,6 +14,8 @@ extends MarginContainer
 func _eh_valido(texto: String) -> bool:
 	return texto.is_valid_float()
 
+#endregion
+
 func _on_circulo_pressed() -> void:
 	var texto = circulo_line_edit.text
 	if not _eh_valido(texto):
@@ -22,6 +25,7 @@ func _on_circulo_pressed() -> void:
 	var r = float(texto)
 	var area : float = 0
 	
+	#TODO
 	#var forma: Forma = Circulo.new(r)
 	#area = forma.area()
 	
@@ -37,6 +41,7 @@ func _on_quadrado_pressed() -> void:
 	var l = float(texto)
 	var area : float = 0
 	
+	#TODO
 	#var forma: Forma = Quadrado.new(l)
 	#var area = forma.area()
 	
@@ -54,14 +59,9 @@ func _on_triangulo_pressed() -> void:
 	var h = float(texto_h)
 	var area : float = 0
 	
+	#TODO
 	#var forma: Forma = Triangulo.new(b, h)
 	#var area = forma.area()
 	
 	triangulo_resultado.modulate = Color.WHITE
 	triangulo_resultado.text = "Área do Triângulo: %s" % str(area).pad_decimals(2)
-
-func _area_total() -> void:
-	pass
-	
-func _perimetro_total() -> void:
-	pass

@@ -1,9 +1,9 @@
 ### 📘 **Lista 3 - Programação Orientada a Objetos com GDScript**
 
 **Objetivo:**
-Esta lista de exercícios introduz os pilares da Programação Orientada a Objetos (POO) utilizando GDScript no Godot Engine. Cada questão trabalha um ou mais pilares: **Abstração**, **Encapsulamento**, **Herança**, **Composição** e **Polimorfismo**.
+Esta lista de exercícios introduz os pilares da Programação Orientada a Objetos (POO) utilizando GDScript. Cada questão trabalha um ou mais pilares: **Abstração**, **Encapsulamento**, **Herança**, **Composição** e **Polimorfismo**.
 
-Cada cena conterá objetos prontos para interação, e o aluno deverá completar ou criar as classes conforme solicitado.
+Cada cena conterá objetos prontos para interação (exceto a questão 5) e o aluno deverá completar ou criar as classes conforme solicitado.
 
 ---
 
@@ -15,17 +15,15 @@ Cada cena conterá objetos prontos para interação, e o aluno deverá completar
 * Entrada: base=7, altura=3 → Saída esperada: Área: 21, Perímetro: 20
 
 **Tarefa:**
-Implemente a classe `Retangulo` com atributos privados `_base` e `_altura`. Crie métodos públicos:
+Complete a classe `Retangulo` com atributos privados `_base` e `_altura`. Crie métodos públicos:
 
 * `calcular_area()` → retorna base × altura
 * `calcular_perimetro()` → retorna 2 × (base + altura)
 
 Utilize métodos `set_base()` e `set_altura()` para alterar os valores e `get_base()` / `get_altura()` para acessá-los.
 
-<details> <summary>Dica 1</b></font></summary> Use prefixo `_` para variáveis privadas, por convenção. </details>
-<details> <summary>Dica 2</b></font></summary> Métodos `get_` e `set_` ajudam a controlar o acesso aos atributos. </details>
-<details> <summary>Dica 3</b></font></summary> A classe deve representar o conceito de forma abstrata, com lógica interna protegida. </details>
-
+Ao final, complete a função `criar_retangulo` que retorna uma instância da classe `Retangulo` para que suas informações
+sejam exibidas na tela
 ---
 
 #### **2️⃣ Classe Animal - Herança**
@@ -41,6 +39,9 @@ Crie uma classe base `Animal` com o método `falar()`. Em seguida, crie subclass
 
 O script deve demonstrar o uso da herança com polimorfismo (chamar `animal.falar()` independentemente do tipo).
 
+- DESAFIO: Tente fazer com que os efeitos sonoros sejam corretamente tocados no momento de pressionar
+o botão "Falar" correspondente.
+
 <details> <summary>Dica 1</b></font></summary> Use `extends` para herdar de outra classe. </details>
 <details> <summary>Dica 2</b></font></summary> O método `falar()` deve ser sobrescrito em cada subclasse. </details>
 <details> <summary>Dica 3</b></font></summary> A herança permite compartilhar comportamento comum e especializar o necessário. </details>
@@ -55,13 +56,13 @@ O script deve demonstrar o uso da herança com polimorfismo (chamar `animal.fala
 * Entrada: potência do motor = 200 → Saída: "Motor ligado! Potência: 200"
 
 **Tarefa:**
-Implemente uma classe `Motor` com atributo `potencia` e método `ligar()`. Crie a classe `Carro` que **possui** um objeto `Motor`. O método `ligar_carro()` do `Carro` deve chamar `ligar()` do motor.
+Implemente uma classe `Motor` com atributo `potencia` e `ligado` e deve incluir o método `ligar()`. 
+
+Crie a classe `Carro` que **possui** um objeto `Motor`. O método `ligar_carro()` do `Carro` deve chamar `ligar()` do motor.
 
 Esse exercício ilustra **composição**: `Carro` depende de um `Motor`, mas pode ser instanciado separadamente.
 
-<details> <summary>Dica 1</b></font></summary> Crie o `Motor` dentro do `Carro` usando `var motor = Motor.new()` </details>
-<details> <summary>Dica 2</b></font></summary> A composição representa uma relação "tem-um". </details>
-<details> <summary>Dica 3</b></font></summary> O motor deve ser uma classe separada e reutilizável. </details>
+<details> <summary>Dica 1</b></font></summary> Crie o `Motor` fora do `Carro` e passe a sua instância como parâmetro do construtor do Carro </details>
 
 ---
 
@@ -74,13 +75,18 @@ Esse exercício ilustra **composição**: `Carro` depende de um `Motor`, mas pod
 * Tentar sacar 100 com saldo 50 → Falha
 
 **Tarefa:**
-Implemente a classe `Cofrinho` com atributo privado `_saldo`.
+Complete a classe `Cofrinho` com atributo privado `_saldo`.
+
+Implemente os seguintes métodos:
 
 * Método `adicionar(valor)` soma ao saldo.
 * Método `sacar(valor)` só subtrai se houver saldo suficiente.
-* Método `get_saldo()` retorna o saldo atual.
+* Método `set_saldo()` configura um novo saldo . (`saldo` setter)
+* Método `get_saldo()` retorna o saldo atual. (`saldo` getter)
+* Método `set_nome(nome)` configura um novo nome. (`nome` setter)
+* Método `get_nome(nome)` retorna o nome atual. (`nome` getter)
 
-Não permita acesso direto ao atributo `_saldo`. Use métodos para proteger o dado.
+Não permita acesso direto ao atributo `saldo`. Use a funcionalidade do `set` e `get` para proteger os dados.
 
 <details> <summary>Dica 1</b></font></summary> Valide a entrada no método `sacar()` para evitar saldo negativo. </details>
 <details> <summary>Dica 2</b></font></summary> O encapsulamento evita que valores sejam alterados diretamente. </details>

@@ -20,6 +20,28 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 script = ExtResource("1_senit")
 
+[node name="InformacoesConta" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Titulo" type="Label" parent="InformacoesConta"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Informações da 
+Conta:"
+
+[node name="Informacoes" type="Label" parent="InformacoesConta"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "%s"
+
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 2
 
@@ -27,29 +49,66 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Titulo" type="Label" parent="Center/VBox"]
+[node name="TituloAplicacao" type="Label" parent="Center/VBox"]
 layout_mode = 2
-text = "Calculadora:
-Some todos os números até N"
+text = "Conta bancária"
 label_settings = SubResource("LabelSettings_07jpv")
 horizontal_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="Center/VBox"]
+[node name="Operacoes" type="GridContainer" parent="Center/VBox"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 4
 
-[node name="Entrada" type="LineEdit" parent="Center/VBox/HBox"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
+[node name="ImprimirSaldoLabel" type="Label" parent="Center/VBox/Operacoes"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 24
-placeholder_text = "Insira o \"N\" aqui"
+text = "Imprimir Saldo"
 
-[node name="Calcular" type="Button" parent="Center/VBox/HBox"]
+[node name="AdicionarSaldoLabel" type="Label" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Adicionar Saldo"
+
+[node name="SacarDinheiroLabel" type="Label" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Sacar Dinheiro"
+
+[node name="MudarNomeLabel" type="Label" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Mudar Nome"
+
+[node name="ImprimirSaldoButton" type="Button" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Imprimir"
+
+[node name="AdicionarSaldoField" type="LineEdit" parent="Center/VBox/Operacoes"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Calcular"
+
+[node name="SacarDinheiroField" type="LineEdit" parent="Center/VBox/Operacoes"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MudarNomeField" type="LineEdit" parent="Center/VBox/Operacoes"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SaldoField" type="Label" parent="Center/VBox/Operacoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Saldo: R$%s"
+
+[node name="AdicionarSaldoButton" type="Button" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Adicionar"
+
+[node name="SacarDinheiroButton" type="Button" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Sacar"
+
+[node name="MudarNomeButton" type="Button" parent="Center/VBox/Operacoes"]
+layout_mode = 2
+text = "Mudar"
 
 [node name="Resultado" type="Label" parent="Center/VBox"]
 unique_name_in_owner = true
@@ -58,4 +117,6 @@ size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_e0lnp")
 vertical_alignment = 1
 
-[connection signal="pressed" from="Center/VBox/HBox/Calcular" to="." method="calcular"]
+[connection signal="pressed" from="Center/VBox/Operacoes/AdicionarSaldoButton" to="." method="adicionar"]
+[connection signal="pressed" from="Center/VBox/Operacoes/SacarDinheiroButton" to="." method="sacar"]
+[connection signal="pressed" from="Center/VBox/Operacoes/MudarNomeButton" to="." method="mudar_nome"]
