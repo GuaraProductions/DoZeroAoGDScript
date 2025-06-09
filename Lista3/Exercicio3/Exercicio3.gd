@@ -23,7 +23,7 @@ func _on_ligar_pressed() -> void:
 	msg_licar_carro.modulate = Color.WHITE
 	#msg_licar_carro.text = msg_ligar_carro
 
-	#potencia_carro.text = potencia
+	#potencia_carro.text = "Potencia do carro: %s" % [Numeros.formatar(potencia)]
 	potencia_carro.modulate = Color.WHITE
 # --- Definições das classes ---
 
