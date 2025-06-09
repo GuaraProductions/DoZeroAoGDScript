@@ -30,7 +30,7 @@ func calcular():
 
 func criar_retangulo(base: float, altura: float) -> Retangulo:
 	#TODO Criar instancia da classe Retangulo e configurar base e altura
-	return Retangulo.new(5,3)
+	return null
 
 class Retangulo:
 	var _base: float
