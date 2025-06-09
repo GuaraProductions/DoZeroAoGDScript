@@ -13,7 +13,7 @@ func _ready() -> void:
 	audio.volume_linear = $VBox/AudioSlider.value
 
 func tocar_audio(efeito_sonoro: AudioStreamOggVorbis) -> void:
-	#audio.stream = efeito_sonoro
+	audio.stream = efeito_sonoro
 	audio.play()
 
 func _on_audio_slider_value_changed(value: float) -> void:
