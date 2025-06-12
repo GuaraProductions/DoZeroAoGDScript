@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce07qk5kxl5so"]
+[gd_scene load_steps=3 format=3 uid="uid://c2ufco4grwlk0"]
 
-[ext_resource type="Script" uid="uid://dg7uskyacxkvf" path="res://Lista4/Exercicio1/Exercicio1.gd" id="1_urhue"]
-[ext_resource type="Script" uid="uid://b6tqhsoigvymd" path="res://Lista4/Exercicio1/Janelas/AdicionarItem.gd" id="2_4pio5"]
-[ext_resource type="Script" uid="uid://b4d01empflt0a" path="res://Lista4/Exercicio1/Janelas/RemoverItem.gd" id="3_483d8"]
+[ext_resource type="Script" uid="uid://n0jc0bur6erv" path="res://Lista4/Exercicio1/Exercicio1.gd" id="1_urhue"]
+[ext_resource type="PackedScene" uid="uid://fg30gqkyh6pv" path="res://Lista4/Exercicio1/Tarefa/TarefaButton.tscn" id="2_4pio5"]
 
 [node name="Exercicio1" type="Control"]
 layout_mode = 3
@@ -12,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_urhue")
+tarefa_button_scene = ExtResource("2_4pio5")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -20,229 +20,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 150
 
-[node name="Cena" type="VBoxContainer" parent="Margin"]
+[node name="-" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
 
-[node name="BarraSuperior" type="HBoxContainer" parent="Margin/Cena"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Margin/Cena/BarraSuperior"]
+[node name="Label" type="Label" parent="Margin/-"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Inventário"
+text = "Lista de Tarefas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Butoes" type="HBoxContainer" parent="Margin/Cena/BarraSuperior"]
+[node name="AdicionarTarefa" type="HBoxContainer" parent="Margin/-"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Descricao" type="LineEdit" parent="Margin/-/AdicionarTarefa"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="AdicionarItem" type="Button" parent="Margin/Cena/BarraSuperior/Butoes"]
+[node name="AdicionarButton" type="Button" parent="Margin/-/AdicionarTarefa"]
 layout_mode = 2
-text = "Adicionar Item"
+text = "Adicionar"
 
-[node name="RemoverItem" type="Button" parent="Margin/Cena/BarraSuperior/Butoes"]
-layout_mode = 2
-text = "Remover Item"
-
-[node name="Inventario" type="HBoxContainer" parent="Margin/Cena"]
+[node name="ItemsPanel" type="PanelContainer" parent="Margin/-"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CaixaListaDeItens" type="PanelContainer" parent="Margin/Cena/Inventario"]
+[node name="Scroll" type="ScrollContainer" parent="Margin/-/ItemsPanel"]
 layout_mode = 2
 
-[node name="_" type="VBoxContainer" parent="Margin/Cena/Inventario/CaixaListaDeItens"]
-layout_mode = 2
-
-[node name="Titulo" type="Label" parent="Margin/Cena/Inventario/CaixaListaDeItens/_"]
-layout_mode = 2
-text = "Items"
-
-[node name="ListaDeItems" type="ItemList" parent="Margin/Cena/Inventario/CaixaListaDeItens/_"]
+[node name="Items" type="VBoxContainer" parent="Margin/-/ItemsPanel/Scroll"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PainelDeDescricao" type="PanelContainer" parent="Margin/Cena/Inventario"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="InformacoesDoItem" type="VBoxContainer" parent="Margin/Cena/Inventario/PainelDeDescricao"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
-layout_mode = 2
-text = "Descrição"
-
-[node name="BarraSuperior" type="PanelContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-
-[node name="_" type="HBoxContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/BarraSuperior"]
-layout_mode = 2
-
-[node name="Icone" type="TextureRect" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/BarraSuperior/_"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-
-[node name="Nome" type="Label" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/BarraSuperior/_"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-
-[node name="CaixaDescricao" type="PanelContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Descricao" type="Label" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/CaixaDescricao"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-autowrap_mode = 2
-
-[node name="AdicionarItem" type="Window" parent="."]
-title = "Adicionar Item"
-position = Vector2i(0, 36)
-size = Vector2i(500, 500)
-visible = false
-script = ExtResource("2_4pio5")
-diretorio_com_texturas = "res://assets/Lista4/Icons"
-
-[node name="Panel" type="PanelContainer" parent="AdicionarItem"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Items" type="VBoxContainer" parent="AdicionarItem/Panel"]
-layout_mode = 2
-
-[node name="Grid" type="GridContainer" parent="AdicionarItem/Panel/Items"]
-layout_mode = 2
-size_flags_vertical = 3
-columns = 2
-
-[node name="NomeItemLabel" type="Label" parent="AdicionarItem/Panel/Items/Grid"]
-layout_mode = 2
-text = "Nome do item"
-
-[node name="NomeItemLineEdit" type="LineEdit" parent="AdicionarItem/Panel/Items/Grid"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="DescricaoLabel" type="Label" parent="AdicionarItem/Panel/Items/Grid"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Descrição"
-
-[node name="DescricaoTextEdit" type="TextEdit" parent="AdicionarItem/Panel/Items/Grid"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-wrap_mode = 1
-scroll_fit_content_width = true
-
-[node name="IconeLabel" type="Label" parent="AdicionarItem/Panel/Items/Grid"]
-layout_mode = 2
-text = "Icone"
-
-[node name="IconeOptionButton" type="OptionButton" parent="AdicionarItem/Panel/Items/Grid"]
-unique_name_in_owner = true
-layout_mode = 2
-expand_icon = true
-
-[node name="QuantidadeLabel" type="Label" parent="AdicionarItem/Panel/Items/Grid"]
-layout_mode = 2
-text = "Quantidade"
-
-[node name="_" type="HBoxContainer" parent="AdicionarItem/Panel/Items/Grid"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="QuantidadeSlider" type="HSlider" parent="AdicionarItem/Panel/Items/Grid/_"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 1.0
-max_value = 50.0
-value = 1.0
-
-[node name="QuantidadeSliderLabel" type="Label" parent="AdicionarItem/Panel/Items/Grid/_"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "         "
-
-[node name="AdicionarItem" type="Button" parent="AdicionarItem/Panel/Items"]
-layout_mode = 2
-text = "Adicionar Item"
-
-[node name="RemoverItem" type="Window" parent="."]
-auto_translate_mode = 1
-title = "Remover Item"
-size = Vector2i(500, 100)
-visible = false
-script = ExtResource("3_483d8")
-
-[node name="Panel" type="PanelContainer" parent="RemoverItem"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Items" type="VBoxContainer" parent="RemoverItem/Panel"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Grid" type="GridContainer" parent="RemoverItem/Panel/Items"]
-layout_mode = 2
-columns = 2
-
-[node name="ItemLabel" type="Label" parent="RemoverItem/Panel/Items/Grid"]
-layout_mode = 2
-text = "Item"
-
-[node name="ItemNome" type="OptionButton" parent="RemoverItem/Panel/Items/Grid"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ItemQuantLabel" type="Label" parent="RemoverItem/Panel/Items/Grid"]
-layout_mode = 2
-text = "Quantidade"
-
-[node name="_" type="HBoxContainer" parent="RemoverItem/Panel/Items/Grid"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ItemQuantSlider" type="HSlider" parent="RemoverItem/Panel/Items/Grid/_"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 1.0
-value = 1.0
-
-[node name="QuantidadeSliderLabel2" type="Label" parent="RemoverItem/Panel/Items/Grid/_"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "      "
-
-[node name="RemoverItem" type="Button" parent="RemoverItem/Panel/Items"]
-layout_mode = 2
-text = "Remover Item"
-
-[connection signal="pressed" from="Margin/Cena/BarraSuperior/Butoes/AdicionarItem" to="." method="_on_add_pressed"]
-[connection signal="pressed" from="Margin/Cena/BarraSuperior/Butoes/RemoverItem" to="." method="_on_remove_pressed"]
-[connection signal="item_selected" from="Margin/Cena/Inventario/CaixaListaDeItens/_/ListaDeItems" to="." method="_on_lista_de_items_item_selected"]
-[connection signal="close_requested" from="AdicionarItem" to="AdicionarItem" method="_on_close_requested"]
-[connection signal="value_changed" from="AdicionarItem/Panel/Items/Grid/_/QuantidadeSlider" to="AdicionarItem" method="_on_quantidade_slider_value_changed"]
-[connection signal="pressed" from="AdicionarItem/Panel/Items/AdicionarItem" to="AdicionarItem" method="_on_adicionar_item_pressed"]
-[connection signal="about_to_popup" from="RemoverItem" to="RemoverItem" method="_on_about_to_popup"]
-[connection signal="close_requested" from="RemoverItem" to="RemoverItem" method="_on_close_requested"]
-[connection signal="item_selected" from="RemoverItem/Panel/Items/Grid/ItemNome" to="RemoverItem" method="_on_item_nome_item_selected"]
-[connection signal="value_changed" from="RemoverItem/Panel/Items/Grid/_/ItemQuantSlider" to="RemoverItem" method="_on_item_quant_slider_value_changed"]
-[connection signal="pressed" from="RemoverItem/Panel/Items/RemoverItem" to="RemoverItem" method="_on_remover_item_pressed"]
+[connection signal="pressed" from="Margin/-/AdicionarTarefa/AdicionarButton" to="." method="adicionado_pressionado"]
