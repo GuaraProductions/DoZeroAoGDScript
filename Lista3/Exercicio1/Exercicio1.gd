@@ -70,5 +70,5 @@ class Retangulo:
 		var altura : String = Numeros.formatar(get_altura())
 		var base : String = Numeros.formatar(get_base())
 		
-		return "[Triangulo]:\nAltura = %s\nBase = %s\nÁrea = %s\nPerímetro = %s" % \
+		return "[Retângulo]:\nAltura = %s\nBase = %s\nÁrea = %s\nPerímetro = %s" % \
 		[altura, base, area, perimetro]

@@ -49,18 +49,21 @@ custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 texture = ExtResource("2_p7ias")
 expand_mode = 2
+stretch_mode = 4
 
 [node name="QuadradoIcon" type="TextureRect" parent="Center/GridContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 texture = ExtResource("3_5jatx")
 expand_mode = 2
+stretch_mode = 4
 
 [node name="TrianguloIcon" type="TextureRect" parent="Center/GridContainer"]
 custom_minimum_size = Vector2(155, 0)
 layout_mode = 2
 texture = ExtResource("4_5vymq")
 expand_mode = 4
+stretch_mode = 4
 
 [node name="CirculoButton" type="Button" parent="Center/GridContainer"]
 layout_mode = 2

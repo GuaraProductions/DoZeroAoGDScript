@@ -37,8 +37,10 @@ func sacar():
 		return
 	var ok = cofre.sacar(float(texto))
 	atualizar_informacoes_da_conta()
-	resultado.text = ok if ok else \
-	 "Dinheiro sacado com sucesso!\nSaldo atualizado: %s" % [str(cofre.get_saldo()).pad_decimals(2)]
+	if ok:
+		resultado.text = "Dinheiro sacado com sucesso!\nSaldo atualizado: %s" % [str(cofre.get_saldo()).pad_decimals(2)]
+	else:
+		resultado.text = "Não foi possível sacar"
 
 #endregion
 

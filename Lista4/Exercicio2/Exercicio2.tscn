@@ -196,6 +196,7 @@ text = "Adicionar Item"
 auto_translate_mode = 1
 title = "Remover Item"
 size = Vector2i(500, 100)
+visible = false
 script = ExtResource("3_75w7u")
 
 [node name="Panel" type="PanelContainer" parent="RemoverItem"]

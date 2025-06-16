@@ -12,7 +12,7 @@ extends MarginContainer
 @onready var triangulo_resultado: Label = $Center/GridContainer/TrianguloResultado
 
 func _eh_valido(texto: String) -> bool:
-	return texto.is_valid_float()
+	return texto.is_valid_float() and float(texto) > 0
 
 #endregion
 
