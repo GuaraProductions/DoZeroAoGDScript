@@ -53,10 +53,7 @@ class OrganizadorDeTarefas:
 
 	func adicionar_tarefa(desc: String) -> Tarefa:
 		#TODO
-		var new_id = _tarefas.size()
-		var tarefa = Tarefa.new(new_id, desc)
-		_tarefas.append(tarefa)
-		return tarefa
+		return null
 
 	func concluir_tarefa(indice: int) -> void:
 		#TODO
@@ -64,9 +61,8 @@ class OrganizadorDeTarefas:
 
 	func deletar_tarefa(indice: int) -> void:
 		#TODO
-		if indice >= 0 and indice < _tarefas.size():
-			_tarefas.remove_at(indice)
+		pass
 
 	func get_tarefas() -> Array:
 		#TODO
-		return _tarefas.duplicate()
+		return []

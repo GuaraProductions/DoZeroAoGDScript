@@ -25,7 +25,7 @@ func _on_add_pressed():
 	
 	adicionar_item.popup_centered()
 	
-	var resultado = await adicionar_item.close_requested
+	var resultado = await adicionar_item.operacao_concluida
 	
 	adicionar_item.hide()
 	
@@ -65,9 +65,7 @@ func _on_remove_pressed():
 	
 	remover_item.popup_centered()
 
-	var resultado = await remover_item.close_requested
-	
-	remover_item.hide()
+	var resultado = await remover_item.operacao_concluida
 	
 	if not resultado:
 		return
@@ -111,20 +109,21 @@ class Item:
 	var descricao : String
 	var textura : Texture
 	
-	func _init(p_id: int = -1, 
-			   p_quantidade: int = 0, 
-			   p_nome: String = "", 
-			   p_descricao: String = "",
-			   p_textura: Texture = null) -> void:
+	func _init(p_id: int = -1,
+				p_quantidade: int = 0,
+				p_nome: String = "",
+				p_descricao: String = "",
+				p_textura: Texture = null) -> void:
 		#TODO:
 		pass
 		
 	func to_dict() -> Dictionary:
-		return {} 
+		#TODO:
+		return {}
 
 class Inventario:
 
-	const LIMITE_ITEMS: int = 50
+	const LIMITE_QUANTIDADE_ITENS: int = 50
 	var _itens: Dictionary = {}
 
 	func _init() -> void:
@@ -135,9 +134,9 @@ class Inventario:
 		return false
 
 	func adicionar_item(nome: String,
-						descricao: String,
-						textura: Texture = null,
-						quantidade: int = 1) -> int:
+					descricao: String,
+					textura: Texture = null,
+					quantidade: int = 1) -> int:
 		#TODO
 		return -1
 

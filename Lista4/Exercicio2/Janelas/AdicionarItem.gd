@@ -1,5 +1,7 @@
 extends Window
 
+signal operacao_concluida(nome, descricao, icone, quantidade)
+
 @export_dir var diretorio_com_texturas : String = ""
 
 @onready var nome_item_line_edit: LineEdit = %NomeItemLineEdit
@@ -70,8 +72,9 @@ func _on_adicionar_item_pressed() -> void:
 	if not icone:
 		OS.alert("Textura selecionada não é válida", "Erro!")
 		return
-		
-	close_requested.emit(nome, descricao, icone, quantidade)
+	
+	operacao_concluida.emit(nome, descricao, icone, quantidade)
+	close_requested.emit()
 	
 func _acessar_icone_selecionado() -> Texture:
 	return icone_option_button.get_item_icon(icone_option_button.selected)

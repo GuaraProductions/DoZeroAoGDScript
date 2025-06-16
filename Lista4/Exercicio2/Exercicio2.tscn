@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce07qk5kxl5so"]
+[gd_scene load_steps=5 format=3 uid="uid://ce07qk5kxl5so"]
 
 [ext_resource type="Script" uid="uid://dg7uskyacxkvf" path="res://Lista4/Exercicio2/Exercicio2.gd" id="1_3di1h"]
 [ext_resource type="Script" uid="uid://b6tqhsoigvymd" path="res://Lista4/Exercicio2/Janelas/AdicionarItem.gd" id="2_3iqi1"]
+[ext_resource type="StyleBox" uid="uid://b0gppolrg0uh2" path="res://assets/Lista4/Exercicio2/Estilizacao/Panel.tres" id="2_75w7u"]
 [ext_resource type="Script" uid="uid://b4d01empflt0a" path="res://Lista4/Exercicio2/Janelas/RemoverItem.gd" id="3_75w7u"]
 
 [node name="Exercicio2" type="Control"]
@@ -20,6 +21,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="Cena" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
@@ -30,6 +35,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Margin/Cena/BarraSuperior"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
 text = "Inventário"
 
 [node name="Butoes" type="HBoxContainer" parent="Margin/Cena/BarraSuperior"]
@@ -55,6 +61,7 @@ layout_mode = 2
 
 [node name="Titulo" type="Label" parent="Margin/Cena/Inventario/CaixaListaDeItens/_"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Items"
 
 [node name="ListaDeItems" type="ItemList" parent="Margin/Cena/Inventario/CaixaListaDeItens/_"]
@@ -62,6 +69,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_75w7u")
 
 [node name="PainelDeDescricao" type="PanelContainer" parent="Margin/Cena/Inventario"]
 layout_mode = 2
@@ -72,11 +80,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Descrição"
 
 [node name="BarraSuperior" type="PanelContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+theme_override_styles/panel = ExtResource("2_75w7u")
 
 [node name="_" type="HBoxContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/BarraSuperior"]
 layout_mode = 2
@@ -95,6 +105,7 @@ size_flags_vertical = 1
 [node name="CaixaDescricao" type="PanelContainer" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_75w7u")
 
 [node name="Descricao" type="Label" parent="Margin/Cena/Inventario/PainelDeDescricao/InformacoesDoItem/CaixaDescricao"]
 unique_name_in_owner = true
@@ -108,7 +119,7 @@ position = Vector2i(0, 36)
 size = Vector2i(500, 500)
 visible = false
 script = ExtResource("2_3iqi1")
-diretorio_com_texturas = "res://assets/Lista4/Icons"
+diretorio_com_texturas = "res://assets/Lista4/Exercicio2/Icons"
 
 [node name="Panel" type="PanelContainer" parent="AdicionarItem"]
 anchors_preset = 15
@@ -116,6 +127,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_75w7u")
 
 [node name="Items" type="VBoxContainer" parent="AdicionarItem/Panel"]
 layout_mode = 2
@@ -184,7 +196,6 @@ text = "Adicionar Item"
 auto_translate_mode = 1
 title = "Remover Item"
 size = Vector2i(500, 100)
-visible = false
 script = ExtResource("3_75w7u")
 
 [node name="Panel" type="PanelContainer" parent="RemoverItem"]
@@ -193,6 +204,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_75w7u")
 
 [node name="Items" type="VBoxContainer" parent="RemoverItem/Panel"]
 layout_mode = 2
